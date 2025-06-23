@@ -1,0 +1,107 @@
+import { Blob } from "../../components/blob";
+import { Loki } from "../../components/loki";
+
+import PxAditya from "../../assets/PxAditya.png";
+import "./style.css";
+
+export function SpotlightPage() {
+  let birthDate = new Date("2005-07-24");
+  let today = new Date();
+  let age = Math.round((today - birthDate) / (3155760000)) / 10;
+
+  let today_date = `${[
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ][today.getDay()]} ${today.getDate()} ${
+    [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ][today.getMonth()]
+  }, ${today.getFullYear()}`;
+
+  return (<>
+    <div className="spotlight-page">
+      <div className="spotlight-background glass-page">
+        <Blob />
+      </div>
+
+      <div className="spotlight-content">
+        <div className="spotlight-block">
+          <div className="spotlight-subtitle">
+            <div className="spotlight-subtitle-content loki-text">
+              {
+                "ATTACHMENT".split("").map(
+                  (char, index) => <span key={`${char}${index}`}>
+                    {char}
+                  </span>
+                )
+              }
+            </div>
+          </div>
+          <div className="spotlight-title">
+            <Loki text="ADITYA" />
+          </div>
+        </div>
+
+        <div className="spotlight-block glass-card">
+          <div className="spotlight-intro">
+            Hi there!
+            
+            <br />
+            <br />
+
+            I'm a Pink coloured Pixelated Austrailian Panda who
+            likes sleeping all day and I also live in Mercury.
+            
+            <br />
+            <br />
+
+            Just kidding.
+            
+            <br />
+            <br />
+
+            I'm <strong>Aditya</strong>, or as some of you might
+            know me, I'm also known as AttAditya, Attachment Aditya
+            or Aditya Prasad Dash. As of now ({today_date}),
+            I'm {Math.round(age)} ({age}) years old. As of creating
+            this website, I'm a college student studying Computer
+            Science.
+
+            <br />
+            <br />
+
+            I have put together this website to showcase some of
+            my projects, interests and hobbies. Maybe you can 
+            by using the navigation bar at the top left of the
+            page.
+            
+            <br />
+            <br />
+            
+            Hope you find something interesting here!
+          </div>
+        </div>
+      </div>
+
+      <div className="spotlight-logo">
+        <img src={PxAditya} alt="Pixel Aditya" />
+      </div>
+    </div>
+  </>);
+}
