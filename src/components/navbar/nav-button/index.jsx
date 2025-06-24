@@ -12,7 +12,11 @@ export function NavButton({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (location) navigate(location);
+    if (location) {
+      window.activateLoader(() => {
+        navigate(location);
+      });
+    };
     if (action) action();
   };
 

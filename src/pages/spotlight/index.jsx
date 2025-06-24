@@ -3,36 +3,32 @@ import { Loki } from "../../components/loki";
 
 import PxAditya from "../../assets/PxAditya.png";
 import "./style.css";
+import { useEffect } from "react";
 
 export function SpotlightPage() {
   let birthDate = new Date("2005-07-24");
   let today = new Date();
   let age = Math.round((today - birthDate) / (3155760000)) / 10;
 
-  let today_date = `${[
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
+  const day = [
+    "Sunday", "Monday", "Tuesday",
+    "Wednesday", "Thursday", "Friday",
     "Saturday"
-  ][today.getDay()]} ${today.getDate()} ${
-    [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ][today.getMonth()]
-  }, ${today.getFullYear()}`;
+  ][today.getDay()];
+  const date = today.getDate();
+  const month = [
+    "January", "February", "March",
+    "April", "May", "June",
+    "July", "August", "September",
+    "October", "November", "December"
+  ][today.getMonth()];
+  const year = today.getFullYear();
+
+  let today_date = `${day} ${date} ${month}, ${year}`;
+
+  useEffect(() => {
+    window.deactivateLoader()
+  }, []);
 
   return (<>
     <div className="spotlight-page">

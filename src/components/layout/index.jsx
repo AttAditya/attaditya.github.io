@@ -2,10 +2,16 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 import { Navbar } from "../navbar";
-import {
-  SpotlightPage,
-} from "../../pages/spotlight";
+import { SpotlightPage } from "../../pages/spotlight";
+import { ExperiencePage } from "../../pages/experience";
+import { ProjectsPage } from "../../pages/projects";
+import { TechnologiesPage } from "../../pages/technologies";
+import { CompetitiveProgrammingPage } from "../../pages/competitive-programming";
+import { OpenSourcePage } from "../../pages/open-source";
+import { EducationPage } from "../../pages/education";
+import { ContactPage } from "../../pages/contact";
 
 import "./style.css";
 
@@ -17,28 +23,32 @@ export function PageLayout() {
     },
     {
       path: "/experience",
-      element: <div>Experience Page</div>
+      element: <ExperiencePage />
     },
     {
       path: "/projects",
-      element: <div>Projects Page</div>
+      element: <ProjectsPage />
     },
     {
-      path: "/education",
-      element: <div>Education Page</div>
-    },
-    {
-      path: "/contact",
-      element: <div>Contact Page</div>
+      path: "/technologies",
+      element: <TechnologiesPage />
     },
     {
       path: "/competitive-programming",
-      element: <div>Competitive Programming Page</div>
+      element: <CompetitiveProgrammingPage />
     },
     {
       path: "/open-source",
-      element: <div>Open Source Page</div>
-    }
+      element: <OpenSourcePage />
+    },
+    {
+      path: "/education",
+      element: <EducationPage />
+    },
+    {
+      path: "/contact",
+      element: <ContactPage />
+    },
   ];
 
   return (<>

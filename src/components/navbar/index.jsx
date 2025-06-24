@@ -9,6 +9,7 @@ import {
   HandCoins,
   Handshake,
   LampDesk,
+  Shapes,
 } from "lucide-react";
 
 import { NavButton } from "./nav-button";
@@ -22,7 +23,7 @@ export function Navbar() {
   const navigations = [
     {
       icon: <LampDesk />,
-      text: "Spotlight",
+      text: "Spotlight (Home)",
       location: "/"
     },
     {
@@ -44,6 +45,11 @@ export function Navbar() {
       icon: <GitPullRequestArrow />,
       text: "Open Source",
       location: "/open-source"
+    },
+    {
+      icon: <Shapes />,
+      text: "Technologies",
+      location: "/technologies"
     },
     {
       icon: <GraduationCap />,
