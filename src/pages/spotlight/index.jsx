@@ -4,27 +4,19 @@ import { Loki } from "../../components/loki";
 import PxAditya from "../../assets/PxAditya.png";
 import "./style.css";
 import { useEffect } from "react";
+import { Glass } from "../../components/glass";
 
 export function SpotlightPage() {
   let birthDate = new Date("2005-07-24");
   let today = new Date();
   let age = Math.round((today - birthDate) / (3155760000)) / 10;
 
-  const day = [
-    "Sunday", "Monday", "Tuesday",
-    "Wednesday", "Thursday", "Friday",
-    "Saturday"
-  ][today.getDay()];
-  const date = today.getDate();
-  const month = [
-    "January", "February", "March",
-    "April", "May", "June",
-    "July", "August", "September",
-    "October", "November", "December"
-  ][today.getMonth()];
+  const weekday = today.toLocaleString('en-US', { weekday: 'long' });
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = today.toLocaleString('en-US', { month: 'long' });
   const year = today.getFullYear();
 
-  let today_date = `${day} ${date} ${month}, ${year}`;
+  const today_date = `${weekday}, ${day} ${month}, ${year}`;
 
   useEffect(() => {
     window.deactivateLoader()
@@ -32,7 +24,7 @@ export function SpotlightPage() {
 
   return (<>
     <div className="spotlight-page">
-      <div className="spotlight-background glass-page">
+      <div className="spotlight-background">
         <Blob />
       </div>
 
@@ -54,7 +46,7 @@ export function SpotlightPage() {
           </div>
         </div>
 
-        <div className="spotlight-block glass-card">
+        <Glass className="spotlight-block">
           <div className="spotlight-intro">
             Hi there!
             
@@ -92,7 +84,7 @@ export function SpotlightPage() {
             
             Hope you find something interesting here!
           </div>
-        </div>
+        </Glass>
       </div>
 
       <div className="spotlight-logo">

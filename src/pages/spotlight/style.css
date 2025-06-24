@@ -127,16 +127,6 @@
   text-align: left;
 }
 
-.glass-card {
-  background: rgba(127, 127, 127, 0.1);
-  border: 0.25rem solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2rem);
-  -webkit-backdrop-filter: blur(2rem);
-  border-radius: 1rem;
-  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.3);
-}
-
-
 @media (max-width: 768px) {
   .spotlight-page {
     flex-direction: column-reverse;

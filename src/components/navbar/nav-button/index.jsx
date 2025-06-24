@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import "./style.css";
 
@@ -10,12 +10,14 @@ export function NavButton({
   expanded,
 }) {
   const navigate = useNavigate();
+  const pageLocation = useLocation();
 
   const handleClick = () => {
     if (location) {
-      window.activateLoader(() => {
-        navigate(location);
-      });
+      if (pageLocation.pathname !== location)
+        window.activateLoader(() => {
+          navigate(location);
+        });
     };
     if (action) action();
   };
