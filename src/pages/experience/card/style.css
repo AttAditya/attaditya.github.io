@@ -7,11 +7,14 @@
   gap: 1.5rem;
   position: relative;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .experience-card-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background-color: var(--icon-background);
   display: flex;
@@ -29,16 +32,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .experience-card-role {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .experience-card-company {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-color);
   display: flex;
@@ -70,31 +74,5 @@
 
 .experience-card-company a:not(:has(span)):active {
   scale: 0.8;
-}
-
-@media screen and (max-width: 768px) {
-  .experience-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .experience-card-icon {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .experience-card-content {
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .experience-card-role {
-    font-size: 1.5rem;
-  }
-
-  .experience-card-company {
-    font-size: 1.2rem;
-  }
 }
 

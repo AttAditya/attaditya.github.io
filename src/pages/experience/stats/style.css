@@ -1,6 +1,8 @@
 .stats {
-  width: 100%;
-  min-height: 50vh;
+  flex-grow: 1;
+  height: max-content;
+  position: sticky;
+  top: 0;
 }
 
 .stats-cols {
@@ -24,12 +26,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  .stats-rows {
-    flex-direction: column;
+  .stats {
+    position: relative;
+    top: unset;
   }
-  
-  .stats-cols {
-    flex-direction: row;
-  }  
 }
 

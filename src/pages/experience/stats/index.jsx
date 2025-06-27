@@ -37,8 +37,8 @@ export function ExperienceStats({ stats }) {
 
   return (<>
     <div className="stats">
-      <div className="stats-rows">
-        <div className="stats-cols">
+      <div className="stats-cols">
+        <div className="stats-rows">
         <StatsCard
           stat={
             experienceMonths > 12
@@ -52,7 +52,7 @@ export function ExperienceStats({ stats }) {
           }
         />
         </div>
-        <div className="stats-cols">
+        <div className="stats-rows">
           <StatsCard
             stat={experienceDomains}
             desc={"domains worked in"}
