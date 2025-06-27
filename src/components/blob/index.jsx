@@ -20,7 +20,7 @@ export function Blob({ min = 5, max = 15 }) {
   }
 
   if (detectMob()) {
-    min = 2;
+    min = 1;
     max = 3;
   }
 
