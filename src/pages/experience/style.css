@@ -25,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 4rem;
+  padding: 4rem 2rem;
   overflow-y: auto;
 }
 
@@ -43,6 +43,7 @@
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 .experience-list {
@@ -51,5 +52,18 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+
+.experience-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .experience-page-content {
+    padding: 0;
+  }
 }
 

@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../api";
 
 import { Blob } from "../../components/blob";
-import { Glass } from "../../components/glass";
+import { ExperienceCard } from "./card";
 
 import "./style.css";
-import { ExperienceCard } from "./card";
 
 export function ExperiencePage() {
   const [loading, setLoading] = useState(false);
@@ -48,22 +47,22 @@ export function ExperiencePage() {
         <Blob />
       </div>
       <div className="experience-page-content">
-        <Glass className="experience-details">
+        <div className="experience-details">
           <h1 className="experience-page-title">
             Experience
           </h1>
 
-          <div className="experience-list">
-            {
-              data.map(
-                experience => <ExperienceCard
+          <div className="experience-content">
+            <div className="experience-list">
+              {
+                data.map(experience => <ExperienceCard
                   key={experience.id}
                   experience={experience}
-                />
-              )
-            }
+                />)
+              }
+            </div>
           </div>
-        </Glass>
+        </div>
       </div>
     </div>
   </>);
