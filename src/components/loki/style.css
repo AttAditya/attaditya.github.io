@@ -13,4 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: inherit;
+  background: inherit;
+  font-size: inherit;
 }

@@ -5,3 +5,41 @@
   align-items: stretch;
   background-color: var(--background-color);
 }
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 1rem;
+  width: 9rem;
+  height: 2rem;
+  color: var(--accent-black);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  user-select: none;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+footer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 0.25rem);
+  height: calc(100% + 0.25rem);
+  background: linear-gradient(
+    to bottom right,
+    var(--accent-blue),
+    var(--accent-green)
+  );
+  z-index: -2;
+}
+

@@ -61,14 +61,7 @@
 .spotlight-title {
   font-size: min(4rem, 10vw);
   line-height: min(4rem, 10vw);
-  background: linear-gradient(
-    to right,
-    var(--accent-blue),
-    var(--accent-green)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: white;
+  color: var(--accent-white);
   font-weight: 700;
   width: 100%;
 }
@@ -77,14 +70,7 @@
   padding: 0 min(8rem, 10vw);
   font-size: min(2rem, 5vw);
   line-height: min(2rem, 5vw);
-  background: linear-gradient(
-    to right,
-    var(--accent-blue),
-    var(--accent-green)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--accent-white);
   font-weight: 700;
   width: 100%;
 }

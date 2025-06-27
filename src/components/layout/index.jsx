@@ -12,6 +12,7 @@ import { CompetitiveProgrammingPage } from "../../pages/competitive-programming"
 import { OpenSourcePage } from "../../pages/open-source";
 import { EducationPage } from "../../pages/education";
 import { ContactPage } from "../../pages/contact";
+import { Loki } from "../loki";
 
 import "./style.css";
 
@@ -65,6 +66,9 @@ export function PageLayout() {
           ))
         }
       </Routes>
+      <footer>
+        <Loki text="ADITYA" />
+      </footer>
     </div>
   </>);
 }

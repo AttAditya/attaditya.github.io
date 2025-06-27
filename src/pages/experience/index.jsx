@@ -4,9 +4,9 @@ import { supabase } from "../../api";
 
 import { Blob } from "../../components/blob";
 import { ExperienceCard } from "./card";
+import { ExperienceStats } from "./stats";
 
 import "./style.css";
-import { ExperienceStats } from "./stats";
 
 export function ExperiencePage() {
   const [loading, setLoading] = useState(false);
