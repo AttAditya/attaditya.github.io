@@ -3,6 +3,27 @@ import { BlobCircle } from "./blob-circle";
 import "./style.css";
 
 export function Blob({ min = 5, max = 15 }) {
+  function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+  }
+
+  if (detectMob()) {
+    min = 2;
+    max = 3;
+  }
+
   return (<>
     <div className="blob">
       {
