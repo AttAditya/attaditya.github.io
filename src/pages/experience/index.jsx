@@ -6,6 +6,7 @@ import { Blob } from "../../components/blob";
 import { ExperienceCard } from "./card";
 
 import "./style.css";
+import { ExperienceStats } from "./stats";
 
 export function ExperiencePage() {
   const [loading, setLoading] = useState(false);
@@ -53,6 +54,8 @@ export function ExperiencePage() {
           </h1>
 
           <div className="experience-content">
+            <ExperienceStats stats={data} />
+
             <div className="experience-list">
               {
                 data.map(experience => <ExperienceCard
