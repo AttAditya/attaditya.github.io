@@ -13,6 +13,22 @@ $loader.style.transitionDelay = "background-color 0.2s";
 
 window.loaderActivated = false;
 
+function detectMob() {
+  const toMatch = [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i
+  ];
+  
+  return toMatch.some((toMatchItem) => {
+    return navigator.userAgent.match(toMatchItem);
+  });
+}
+
 function createPowerBlob() {
   const blob = document.createElement('div');
   
@@ -88,7 +104,7 @@ function startLoading(loadFn) {
   if (!$loader) return;
   openLoader(loadFn);
 
-  const maxBlobCount = 500;
+  const maxBlobCount = detectMob() ? 200 : 500;
   let blobCount = 0;
   
   const spawnBlob = () => {
