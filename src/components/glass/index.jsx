@@ -1,8 +1,15 @@
 import "./style.css";
 
-export function Glass({ children, className = "" }) {
+export function Glass({
+  children,
+  className = "",
+  ...props
+}) {
   return (<>
-    <div className={`glass-card ${className}`}>
+    <div
+      {...props}
+      className={`glass-card ${className}`}
+    >
       {children}
     </div>
   </>);
