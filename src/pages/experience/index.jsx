@@ -1,16 +1,42 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { supabase } from "../../api";
 
 import { Blob } from "../../components/blob";
+import { Stats } from "../../components/stats";
 import { ExperienceCard } from "./card";
-import { ExperienceStats } from "./stats";
+
 
 import "./style.css";
 
 export function ExperiencePage() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
+  const [experienceMonths, setExperienceMonths] = useState(null);
+  const [experienceDomains, setExperienceDomains] = useState(null);
+  const [companyCount, setCompanyCount] = useState(null);
+
+  const findMonths = useCallback((exp) => {
+    const { start, end, professional } = exp;
+    if (!professional) return 0;
+    
+    const startDate = new Date(start);
+    const endDate = end ? new Date(end) : new Date();
+
+    const months = (
+      endDate.getFullYear() - startDate.getFullYear()
+    ) * 12 + (endDate.getMonth() - startDate.getMonth()) + 1;
+    
+    return months;
+  }, []);
+
+  const setPageData = useCallback((data, xpM, xpD, xpC) => {
+    setExperienceMonths(xpM);
+    setExperienceDomains(xpD);
+    setCompanyCount(xpC);
+    setData(data);
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     if (data === null) setLoading(true);
@@ -28,19 +54,72 @@ export function ExperiencePage() {
     if (!loading) return;
     const fetchData = async () => {
       let fetchedData = await supabase.from("experience").select("*");
-      fetchedData = fetchedData.data || [];
-      fetchedData.sort((a, b) => {
+      const stats = fetchedData.data || [];
+
+      stats.sort((a, b) => {
         return new Date(b.start) - new Date(a.start);
       });
 
-      setData(fetchedData);
-      setLoading(false);
+      const xpM = stats.reduce(
+        (acc, exp) => findMonths(exp) + acc, 0
+      );
+
+      const xpD = new Set(stats.reduce(
+        (acc, exp) => ([
+          ...exp.tags.domains,
+          ...acc,
+        ]), []
+      )).size;
+
+      const xpC = new Set(stats.reduce(
+        (acc, exp) => ([
+          exp.company,
+          ...acc,
+        ]), []
+      )).size;
+
+      setPageData(stats, xpM, xpD, xpC);
     };
 
     fetchData();
-  }, [loading]);
+  }, [loading, findMonths, setPageData]);
 
   if (loading || data === null) return null;
+
+  const statsData = {
+    cols: [
+      {
+        rows: [
+          {
+            element: {
+              stat: experienceMonths > 12
+                ? (experienceMonths / 12).toFixed(1)
+                : experienceMonths,
+              desc: experienceMonths > 12
+                ? "years of experience"
+                : "months of experience"
+            }
+          }
+        ],
+      },
+      {
+        rows: [
+          {
+            element: {
+              stat: experienceDomains,
+              desc: "domains"
+            }
+          },
+          {
+            element: {
+              stat: companyCount,
+              desc: "companies"
+            }
+          }
+        ]
+      }
+    ]
+  };
 
   return (<>
     <div className="experience-page">
@@ -54,7 +133,7 @@ export function ExperiencePage() {
           </h1>
 
           <div className="experience-content">
-            <ExperienceStats stats={data} />
+            <Stats stats={statsData} />
 
             <div className="experience-list">
               {
