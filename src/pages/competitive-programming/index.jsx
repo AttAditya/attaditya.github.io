@@ -4,10 +4,14 @@ import { leetstats } from "../../api";
 import { Blob } from "../../components/blob";
 import { Stats } from "../../components/stats";
 import { HistogramCard } from "../../components/cards/histogram/indes";
+import { Glass } from "../../components/glass";
 
 import "./style.css";
+import { ExternalLink } from "lucide-react";
 
 export function CompetitiveProgrammingPage() {
+  const leetcodeUrl = "https://leetcode.com/attaditya/";
+
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
 
@@ -38,6 +42,14 @@ export function CompetitiveProgrammingPage() {
   
   if (loading || data === null) return null;
 
+  const contestData = data.userContestRanking || {};
+  const contestRating = contestData?.rating ?? 0;
+  const contestRatingBadge = contestData?.badge?.name || "Unranked";
+  const globalRanking = contestData?.globalRanking || 0;
+  const ratingGraph = data.contestRatingHistogram || [];
+  const topPercentage = contestData?.topPercentage || 0;
+  const totalParticipants = contestData?.totalParticipants || 0;
+
   const cpStats = {
     cols: [
       {
@@ -45,11 +57,11 @@ export function CompetitiveProgrammingPage() {
           {
             element: {
               stat: <HistogramCard data={
-                data.contestRatingHistogram.map(bin => ({
+                ratingGraph.map(bin => ({
                   count: bin.userCount,
                   start: bin.ratingStart,
                   end: bin.ratingEnd,
-                  highlight: data.userContestRanking.rating
+                  highlight: contestRating
                 }))
               } />,
               desc: "Ranking Graph",
@@ -61,7 +73,7 @@ export function CompetitiveProgrammingPage() {
         rows: [
           {
             element: {
-              stat: (data.userContestRanking.rating ?? 0).toFixed(2),
+              stat: contestRating.toFixed(0),
               desc: "LeetCode Rating"
             }
           },
@@ -70,13 +82,13 @@ export function CompetitiveProgrammingPage() {
               stat: <img
                 src={[
                   "https://assets.leetcode.com/static_assets/others/",
-                  data.userContestRanking.badge.name,
+                  contestRatingBadge,
                   ".gif"
                 ].join("")}
-                alt={data.userContestRanking.badge.name}
+                alt={contestRatingBadge}
                 width={"30%"}
               />,
-              desc: `${data.userContestRanking.badge.name} Level`
+              desc: `${contestRatingBadge} Level`
             }
           },
         ]
@@ -85,14 +97,14 @@ export function CompetitiveProgrammingPage() {
         rows: [
           {
             element: {
-              stat: data.userContestRanking.globalRanking ?? 0,
-              substat: `/ ${data.userContestRanking.totalParticipants ?? 0}`,
+              stat: globalRanking ?? 0,
+              substat: `/ ${totalParticipants}`,
               desc: "Global Ranking"
             }
           },
           {
             element: {
-              stat: `${data.userContestRanking.topPercentage ?? 0}%`,
+              stat: `${topPercentage.toFixed(2)}%`,
               desc: "Top Percentage"
             }
           },
@@ -112,6 +124,19 @@ export function CompetitiveProgrammingPage() {
           <h1 className="competitive-programming-title">
             LeetCode
           </h1>
+
+          <a
+            href={leetcodeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Glass className="competitive-programming-link">
+              <span>
+                View Profile on LeetCode
+              </span>
+              <ExternalLink className="icon" />
+            </Glass>
+          </a>
 
           <div className="competitive-programming-stats">
             <Stats stats={cpStats} />

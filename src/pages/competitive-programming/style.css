@@ -50,6 +50,37 @@
   width: 100%;
 }
 
+.competitive-programming-details a {
+  color: var(--accent-white);
+  text-decoration: none;
+}
+
+.competitive-programming-link {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  scale: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.competitive-programming-link .icon {
+  min-width: 1.5rem;
+  height: 1.5rem;
+}
+
+.competitive-programming-link:hover {
+  scale: 1;
+}
+
+.competitive-programming-link:active {
+  scale: 0.8;
+}
+
 @media screen and (max-width: 768px) {
   .competitive-programming-page .stats-rows {
     flex-direction: column;
