@@ -3,9 +3,9 @@ import { leetstats } from "../../api";
 
 import { Blob } from "../../components/blob";
 import { Stats } from "../../components/stats";
+import { HistogramCard } from "../../components/cards/histogram/indes";
 
 import "./style.css";
-import { Glass } from "../../components/glass";
 
 export function CompetitiveProgrammingPage() {
   const [loading, setLoading] = useState(false);
@@ -44,96 +44,14 @@ export function CompetitiveProgrammingPage() {
         rows: [
           {
             element: {
-              stat: (
-                <div key={"Rating Histogram"} style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "end",
-                  justifyContent: "center",
-                  gap: "0.5vw",
-                }}>
-                  {
-                    data.contestRatingHistogram.map(
-                      (bin) => (
-                        <Glass
-                          key={bin.ratingStart}
-                          style={{
-                            width: `${(
-                              40 / (
-                                data.contestRatingHistogram.length
-                              )
-                            )}vw`,
-                            height:
-                            `${15 * (bin.userCount / (
-                              data.contestRatingHistogram.reduce(
-                                (a, b) => Math.max(
-                                  a,
-                                  b.userCount
-                                ), 0
-                              ))
-                            )}rem`,
-                            color:
-                              (
-                                bin.ratingEnd > data.userContestRanking.rating
-                                && bin.ratingStart < data.userContestRanking.rating
-                              )
-                                ? "var(--accent-green)"
-                                : undefined,
-                            backgroundColor: "currentColor",
-                            borderRadius: "0.5vw",
-                            boxShadow: "none",
-                            marginTop: "1rem",
-                            opacity: (
-                              bin.ratingEnd > data.userContestRanking.rating
-                              && bin.ratingStart < data.userContestRanking.rating
-                            )
-                              ? "100%"
-                              : "40%",
-                            cursor: "pointer",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.target.style.opacity = "100%";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.target.style.opacity = (
-                              bin.ratingEnd > data.userContestRanking.rating
-                              && bin.ratingStart < data.userContestRanking.rating
-                            )
-                              ? "100%"
-                              : "50%";
-                          }}
-                        >
-                          <span
-                            style={{
-                              position: "absolute",
-                              bottom: "calc(100% + 1rem)",
-                              left: "50%",
-                              transform: "translateX(-50%) rotate(-30deg)",
-                              fontSize: "0.75rem",
-                              color: "inherit",
-                              textShadow: "0 0 0.5rem black",
-                              fontWeight: (
-                                bin.ratingEnd > data.userContestRanking.rating
-                                && bin.ratingStart < data.userContestRanking.rating
-                              )
-                                ? "800"
-                                : undefined,
-                              zIndex: (
-                                bin.ratingEnd > data.userContestRanking.rating
-                                && bin.ratingStart < data.userContestRanking.rating
-                              )
-                                ? 5
-                                : undefined,
-                            }}
-                          >
-                            {bin.ratingStart}
-                          </span>
-                        </Glass>
-                      )
-                    )
-                  }
-                </div>
-              ),
+              stat: <HistogramCard data={
+                data.contestRatingHistogram.map(bin => ({
+                  count: bin.userCount,
+                  start: bin.ratingStart,
+                  end: bin.ratingEnd,
+                  highlight: data.userContestRanking.rating
+                }))
+              } />,
               desc: "Ranking Graph",
             }
           }

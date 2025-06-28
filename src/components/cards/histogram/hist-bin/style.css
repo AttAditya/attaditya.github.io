@@ -1,0 +1,52 @@
+.histogram-bin {
+  color: var(--accent-white);
+  background-color: currentColor;
+  border-radius: 0.5vw;
+  box-shadow: none;
+  margin-top: 1rem;
+  opacity: 40%;
+  cursor: pointer;
+}
+
+.histogram-bin:hover {
+  opacity: 100%;
+  z-index: 8;
+}
+
+.histogram-bin.highlight {
+  color: var(--accent-green);
+  opacity: 100%;
+  z-index: 5;
+}
+
+.histogram-bin span {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%) rotate(-30deg);
+  font-size: 0.75rem;
+  color: inherit;
+  text-shadow: 0 0 0.5rem black;
+}
+
+.histogram-bin.highlight span {
+  font-weight: 800;
+  z-index: 5;
+}
+
+.histogram-bin:hover span {
+  font-weight: 800;
+}
+
+@media screen {
+  .histogram-bin span {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0;
+  }
+
+  .histogram-bin:hover span,
+  .histogram-bin.highlight span {
+    opacity: 1;
+  }
+}
+
