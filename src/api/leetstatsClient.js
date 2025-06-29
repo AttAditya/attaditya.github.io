@@ -169,22 +169,18 @@ export async function fetchLeetStats() {
     return { data: null };
   }
 
-  const cacheValue = JSON.stringify(data.data);
-  const cacheInsert = await supabase
-    .from("cache_table")
-    .upsert({
-      cache_key: cache_key,
-      cache_value: cacheValue,
-      last_update: new Date()
-    });
-  
-  if (cacheInsert.error) {
-    console.error("Error inserting cache:", cacheInsert.error);
-  } else {
-    console.log("Cache updated successfully.");
-  }
-  
-  return result;
+  const cacheValue = data.data;
+  try {
+    await supabase
+      .from("cache_table")
+      .upsert({
+        cache_key: cache_key,
+        cache_value: JSON.stringify(cacheValue),
+        last_update: new Date()
+      });
+  } catch (error) {}
+
+  return { data: cacheValue };
 }
 
 export const leetstats = {

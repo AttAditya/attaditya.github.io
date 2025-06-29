@@ -87,6 +87,7 @@ function openLoader(loadFn) {
   setTimeout(() => {
     $loader.style.background = "var(--background-color)"
     $root.opacity = 0;
+    $loader.style.pointerEvents = "all";
     if (loadFn) setTimeout(loadFn, 1000);
   }, 1000);
 }
@@ -141,6 +142,7 @@ window.activateLoader = (loadFn) => {
 window.deactivateLoader = () => {
   if (!window.loaderActivated) return;
   window.loaderActivated = false;
+  $loader.style.pointerEvents = "none";
   $loader.style.background = "transparent";
 };
 
