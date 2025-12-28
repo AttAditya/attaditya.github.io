@@ -1,0 +1,73 @@
+:root {
+  --color-a1: #E5E5E5;
+  --color-a2: #D4D4D4;
+  --color-a3: #A1A1A1;
+  --color-a4: #737373;
+  
+  --color-b1: #525252;
+  --color-b2: #404040;
+  --color-b3: #262626;
+  --color-b4: #171717;
+
+  --color-c1: #E6FFFD;
+  --color-c2: #CDF5FD;
+  --color-c3: #A0E9FF;
+  --color-c4: #00A9FF;
+
+  --font-n: "Parkinsans", sans-serif;
+  --font-m: "JetBrains Mono", monospace;
+}
+
+@import "@styles/fonts.css";
+@import "@styles/variables.css";
+@import "@styles/animations.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-n);
+  background: transparent;
+  color: inherit;
+  outline: none;
+  border: none;
+  cursor: inherit;
+  transition: all 0.3s ease-in-out;
+}
+
+html, body, #root {
+  transition: none;
+  min-height: 100%;
+  width: 100%;
+  font-size: 16px;
+  background-color: var(--color-a1);
+  color: var(--color-b4);
+  cursor: default;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--color-a1);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background-color: var(--color-a2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-b2);
+  border-radius: 1rem;
+  border: none;
+}
+
