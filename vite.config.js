@@ -13,6 +13,7 @@ export default defineConfig({
       '@api': '/src/api',
       '@contexts': '/src/contexts',
       '@styles': '/src/styles',
+      '@assets': '/src/assets',
     }
   }
 });

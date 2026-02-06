@@ -1,20 +1,36 @@
 :root {
-  --color-a1: #E5E5E5;
-  --color-a2: #D4D4D4;
-  --color-a3: #A1A1A1;
-  --color-a4: #737373;
-  
-  --color-b1: #525252;
-  --color-b2: #404040;
-  --color-b3: #262626;
-  --color-b4: #171717;
+  /* Dark theme base */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #171717;
 
-  --color-c1: #E6FFFD;
-  --color-c2: #CDF5FD;
-  --color-c3: #A0E9FF;
-  --color-c4: #00A9FF;
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a1;
+  --text-muted: #525252;
 
-  --font-n: "Parkinsans", sans-serif;
-  --font-m: "JetBrains Mono", monospace;
+  /* Accent gradient colors */
+  --accent-blue: #00bbff;
+  --accent-green: #00ff99;
+
+  /* Glass effect */
+  --glass-bg: rgba(127, 127, 127, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Grid lines */
+  --grid-color: rgba(255, 255, 255, 0.03);
+
+  /* Fonts */
+  --font-primary: "Lexend", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --navbar-width: 6rem;
+  --page-padding: 2rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
 }
-

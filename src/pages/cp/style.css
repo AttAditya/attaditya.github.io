@@ -1,0 +1,103 @@
+.cp-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.cp-content {
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cp-intro {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  text-align: center;
+}
+
+.cp-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cp-profiles a {
+  text-decoration: none;
+}
+
+.cp-profile-card {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  min-width: 180px;
+}
+
+.cp-profile-card:hover {
+  background: var(--glass-border);
+}
+
+.cp-platform {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cp-username {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.cp-link-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--text-muted);
+}
+
+.cp-stats-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cp-stats-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.leetcode-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.leetcode-card {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .cp-page {
+    padding: 2rem 1rem;
+  }
+
+  .cp-profile-card {
+    padding: 1.25rem 1.5rem;
+    min-width: 150px;
+  }
+}

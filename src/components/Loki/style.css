@@ -1,0 +1,23 @@
+.loki-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.loki-char {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: none;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+}
