@@ -1,0 +1,69 @@
+@keyframes rotate {
+  from {
+    --anim-degree: 0deg;
+  }
+  to {
+    --anim-degree: 360deg;
+  }
+}
+
+@property --anim-degree {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.domains {
+  text-align: center;
+}
+
+.domain-canvas {
+  --anim-degree: 0deg;
+  position: relative;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 10s linear infinite !important;
+  user-select: none;
+}
+
+.domain-circle {
+  --angle: 30;
+  --radius: 10rem;
+  width: 15rem;
+  height: 15rem;
+  color: var(--color-white);
+  background: var(--color-focus);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  position: absolute;
+  transition: none;
+  transform: translate(-50%, -50%) rotate(
+    calc(var(--angle) * 1deg + var(--anim-degree) + 180deg)
+  );
+  top: calc(50% + (
+    cos((var(--angle) * 1deg) + var(--anim-degree)) * var(--radius)
+  ));
+  left: calc(50% + (
+    sin((var(--angle) * 1deg) + var(--anim-degree)) * var(--radius)
+  ));
+}
+
+.domain-circle:nth-child(1) {
+  --angle: 0;
+}
+
+.domain-circle:nth-child(2) {
+  --angle: 120;
+}
+
+.domain-circle:nth-child(3) {
+  --angle: 240;
+}
+

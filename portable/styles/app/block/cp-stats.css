@@ -1,0 +1,53 @@
+.cp-stats-leetcode {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+}
+
+.cp-stats-leetcode-summary {
+  display: flex;
+  gap: 2rem;
+}
+
+.cp-stats-leetcode-summary-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-focus);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.cp-stats-leetcode-summary-content h1 {
+  line-height: 1;
+}
+
+@media (max-width: 800px) {
+  .cp-stats-leetcode {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cp-stats-leetcode-summary {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "a1 a2"
+      "a3 a3";
+  }
+
+  .cp-stats-leetcode-summary-content:nth-child(1) {
+    grid-area: a1;
+  }
+
+  .cp-stats-leetcode-summary-content:nth-child(2) {
+    grid-area: a2;
+  }
+
+  .cp-stats-leetcode-summary-content:nth-child(3) {
+    grid-area: a3;
+  }
+}
+
