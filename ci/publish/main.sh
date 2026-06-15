@@ -18,6 +18,8 @@ rm -rf ./*
 mv .dist/* ./
 rm -rf .dist
 
+cp index.html 404.html
+
 git config user.name "Attachment Aditya"
 git config user.email "attachment.aditya@gmail.com"
 
