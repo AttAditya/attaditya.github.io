@@ -1,6 +1,6 @@
 <div align="center">
 
-![Pixel Aditya](https://github.com/AttAditya/attaditya.github.io/blob/main/portfolio/public/logo.png?raw=true)
+![Pixel Aditya](https://github.com/AttAditya/attaditya.github.io/blob/main/portable/public/logo.png?raw=true)
 
 # AttAditya Portfolio
 
