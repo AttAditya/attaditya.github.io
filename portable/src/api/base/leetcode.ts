@@ -38,6 +38,7 @@ export const leetcodeCaller = new ApiCaller({
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-model": "\"\"",
     "sec-ch-ua-platform": "\"macOS\"",
+
     "sec-ch-ua-platform-version": "\"26.5.0\"",
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",

@@ -5,6 +5,7 @@ const assetData = {
 } as const;
 
 export type AssetName = (keyof typeof assetData);
+
 export function useAsset(assetName: AssetName): string {
   return assetData[assetName];
 }

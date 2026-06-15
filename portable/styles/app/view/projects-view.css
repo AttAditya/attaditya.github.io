@@ -1,0 +1,11 @@
+.projects-view {
+  min-height: 100vh;
+}
+
+.projects-search {
+  position: sticky;
+  padding: 4rem;
+  top: 0;
+  z-index: 10;
+}
+

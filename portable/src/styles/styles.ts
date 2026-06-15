@@ -55,6 +55,8 @@ const classNames = {
   'infolet-content': 'infolet-content',
   'infolet-icon': 'infolet-icon',
   'infolet-icon-container': 'infolet-icon-container',
+  'input': 'input',
+  'input-container': 'input-container',
   'jiggle': 'jiggle',
   'latest': 'latest',
   'latest-linklets': 'latest-linklets',
@@ -99,6 +101,8 @@ const classNames = {
   'open-source-card-repo-text': 'open-source-card-repo-text',
   'open-source-card-title': 'open-source-card-title',
   'open-source-list': 'open-source-list',
+  'projects-search': 'projects-search',
+  'projects-view': 'projects-view',
   'scrollpop': 'scrollpop',
   'section': 'section',
   'section-content': 'section-content',
@@ -121,10 +125,10 @@ const classNames = {
 
 export type ClassName = (keyof typeof classNames);
 export type PossibleClassName = ClassName | false | null | undefined;
+
 export function useClasses(...args: PossibleClassName[]): string {
   const validClass = (arg: PossibleClassName) => !!(arg && arg in classNames);
   const validClasses = args.filter(validClass) as ClassName[];
-
   return validClasses.map(arg => classNames[arg]).join(' ');
 }
 
