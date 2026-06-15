@@ -2,13 +2,12 @@ import * as iconoir from "@attaditya/iconoir-preact/regular";
 import { ArrowUpRightRegular, LinkRegular } from "@attaditya/iconoir-preact";
 import { Link } from "@components/ui/interactive/link";
 import { Container } from "@components/ui/structure/container";
-import { Heading } from "@components/ui/text/heading";
 import { Text } from "@components/ui/text/text";
 import { useClasses } from "@styles";
 
 interface SocialLinkProps {
   icon?: keyof typeof iconoir;
-  title: string;
+  title?: string;
   url: string;
   newTab?: boolean;
 }
@@ -27,6 +26,11 @@ export function SocialLink({
       <Container className={useClasses("social-link")}>
         <Container className={useClasses("social-link-icon-container")}>
           <IconComponent className={useClasses("social-link-icon")} />
+          {title && (
+            <Text className={useClasses("social-link-title")}>
+              {title}
+            </Text>
+          )}
         </Container>
 
         <Container className={useClasses("social-link-hover")}>

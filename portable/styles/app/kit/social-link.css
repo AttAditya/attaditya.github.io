@@ -21,10 +21,20 @@
 
 .social-link-icon-container {
   border-radius: 20rem;
-  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.social-link-icon-container:not(:has(.social-link-title)) {
+  aspect-ratio: 1 / 1;
+}
+
+.social-link-title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--color-shade);
+  padding-right: 1rem;
 }
 
 .social-link-icon {
