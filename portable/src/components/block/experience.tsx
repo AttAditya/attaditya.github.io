@@ -7,6 +7,7 @@ import { useClasses } from "@styles";
 interface ExperienceProps {
   contributions: string[];
   company: string;
+
   role: {
     name: string;
     type: string;

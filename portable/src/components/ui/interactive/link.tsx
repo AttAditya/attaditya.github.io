@@ -13,6 +13,7 @@ export function Link({ url, className, children, newTab = false }: LinkProps) {
   return (
     <Clickable
       className={className}
+
       onClick={() => {
         if (newTab) {
           window.open(url, "_blank");

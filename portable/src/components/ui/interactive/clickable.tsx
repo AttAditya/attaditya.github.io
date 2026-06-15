@@ -17,6 +17,7 @@ export function Clickable({
 }: ClickableProps) {
   return <span
     className={useClasses("clickable") + " " + className}
+
     onClick={(event) => {
       onClick();
       onEventClick?.(event);

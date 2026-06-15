@@ -6,13 +6,15 @@ import { ThemeButton } from "@components/kit/theme-button";
 import { Container } from "@components/ui/structure/container";
 import { Top } from "@components/ui/structure/top";
 import { HomeView } from "@components/view/home-view";
+import { ErrorView } from "@components/view/not-found-view";
 import { useForwarded } from "@utils/path";
 import { type LayoutProps, useRouter } from "@utils/router";
 
-function Layout({ dynamic, children }: LayoutProps) {
+function Layout({ forwarded, dynamic, children }: LayoutProps) {
+  const path = `/${dynamic}/${forwarded?.join('/')}`;
+
   return <>
-    {children}
-    {(!children && !dynamic) && (<Container>
+    <Container>
       <Menu position="top-left">
         <MenuBrand />
       </Menu>
@@ -23,9 +25,18 @@ function Layout({ dynamic, children }: LayoutProps) {
       </Menu>
 
       <Top />
-      <HomeView />
+
+      {!!children ? children : (
+        !dynamic
+          ? <HomeView />
+          : <ErrorView
+            code={404}
+            message={`Can't reach: ${path}`}
+          />
+      )}
+
       <Footer />
-    </Container>)}
+    </Container>
   </>;
 }
 

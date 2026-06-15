@@ -4,6 +4,7 @@ import { MenuButton } from "@components/kit/menu-button";
 
 export function ScrollTopButton() {
   const [canScroll, setCanScroll] = useState(false);
+
   const scrollToTop = useCallback(() => {
     const topElement = document.getElementById("top");
     topElement?.scrollIntoView({ behavior: "smooth" });
@@ -28,6 +29,7 @@ export function ScrollTopButton() {
     };
 
     handleScroll();
+
     scrollableParent?.addEventListener(
       "scroll", handleScroll
     );

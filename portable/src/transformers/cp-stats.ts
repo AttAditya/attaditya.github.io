@@ -8,6 +8,7 @@ interface RawData {
       globalRanking: number;
       totalParticipants: number;
       topPercentage: number;
+
       badge: null | {
         name: "Guardian" | "Knight";
       }
@@ -20,6 +21,7 @@ interface RawData {
       finishTimeInSeconds: number;
       rating: number;
       ranking: number;
+
       contest: {
         title: string;
         startTime: number;
@@ -27,6 +29,7 @@ interface RawData {
     }[],
     userProfileUserQuestionProgressV2: {
       totalQuestionBeatsPercentage: number;
+
       numAcceptedQuestions: {
         count: number;
         difficulty: string;
@@ -56,12 +59,14 @@ interface RawData {
 export function transformCpStatsLeetcode(raw: unknown): CpStatsLeetcode {
   const data = (raw as RawData).data;
   const userRating = Math.round(data.userContestRanking.rating);
+
   const userData = {
     rating: Math.round(data.userContestRanking.rating),
     badge: data.userContestRanking.badge?.name ?? null,
   };
 
   const ucrhData = data.userContestRankingHistory;
+
   const contestTimes = ucrhData.map(
     (entry) => entry.contest.startTime
   );
@@ -69,6 +74,7 @@ export function transformCpStatsLeetcode(raw: unknown): CpStatsLeetcode {
   const initialTime = Math.min(...contestTimes);
   const finalTime = Math.max(...contestTimes);
   const totalTime = finalTime - initialTime || 1;
+
   const ratings = ucrhData.map(
     (entry) => entry.rating
   );
@@ -76,6 +82,7 @@ export function transformCpStatsLeetcode(raw: unknown): CpStatsLeetcode {
   const minRating = Math.min(...ratings);
   const maxRating = Math.max(...ratings);
   const ratingWindow = maxRating - minRating || 1;
+
   const linegraphPoints = ucrhData.map(
     (entry) => ({
       x: (entry.contest.startTime - initialTime) / totalTime,
@@ -86,6 +93,7 @@ export function transformCpStatsLeetcode(raw: unknown): CpStatsLeetcode {
 
   const crhData = data.contestRatingHistogram;
   const maxCount = Math.max(...crhData.map((entry) => entry.userCount), 1);
+
   const histogramBars = crhData.map(
     (entry) => ({
       start: entry.ratingStart,

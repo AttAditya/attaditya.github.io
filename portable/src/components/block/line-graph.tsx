@@ -4,6 +4,7 @@ import { useClasses } from "@styles";
 
 interface LineGraphProps {
   title?: string;
+
   points: {
     x: number;
     y: number;
@@ -23,6 +24,7 @@ export function LineGraph({ title, points }: LineGraphProps) {
           <Container
           key={point.x}
           className={useClasses("line-graph-point")}
+
           attributes={{
             "data-x": point.x.toString(),
             "data-y": point.y.toString(),

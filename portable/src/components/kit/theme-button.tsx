@@ -6,6 +6,7 @@ function bubbleAnimation(callback: () => void) {
   const bubble = document.createElement("div");
   bubble.className = "theme-bubble";
   document.body.appendChild(bubble);
+
   setTimeout(() => {
     callback();
   }, 1000);
@@ -17,9 +18,11 @@ function bubbleAnimation(callback: () => void) {
 
 export function ThemeButton() {
   const [theme, setTheme] = useState("light");
+
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
       const newTheme = prev === "light" ? "dark" : "light";
+
       bubbleAnimation(() => {
         localStorage.setItem("theme", newTheme);
         document.documentElement.classList.remove("light", "dark");
@@ -44,6 +47,7 @@ export function ThemeButton() {
   return (<>
     <MenuButton
       onClick={() => toggleTheme()}
+
       icon={
         theme === "light"
           ? "SunLightRegular"

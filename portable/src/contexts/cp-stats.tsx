@@ -19,6 +19,7 @@ function createCpStatsContext() {
     const { dataDump, subscribe, refreshApi } = useData();
     const [subscribed, setSubscribed] = useState(false);
     const [ready, setReady] = useState(false);
+
     const [userData, setUserData] = useState<UserData>({
       rating: null,
       badge: null,
@@ -26,6 +27,7 @@ function createCpStatsContext() {
 
     const [linegraph, setLinegraph] = useState<LinegraphPoint[]>([]);
     const [histogram, setHistogram] = useState<HistogramPoint[]>([]);
+
     const processData = useCallback(() => {
       const {
         userData,
@@ -43,6 +45,7 @@ function createCpStatsContext() {
 
     useEffect(() => {
       setSubscribed(true);
+
       const unsubscribe = subscribe(
         "cpStatLeetcode", () => processData()
       );

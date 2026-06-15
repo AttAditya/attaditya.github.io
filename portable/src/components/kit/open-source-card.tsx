@@ -13,6 +13,7 @@ interface OpenSourceCardProps {
   info: string;
   mine: string;
   animation?: string;
+
   dist: {
     main: string;
     fork: string;
@@ -35,6 +36,7 @@ export function OpenSourceCard({
   fork, animation,
 }: OpenSourceCardProps) {
   const IconComponent = iconoir[icon];
+
   const openLink = useCallback((url: string) => {
     window.open(url, "_blank");
   }, []);

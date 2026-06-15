@@ -18,6 +18,7 @@ export interface SubscriptionMeta {
 export function useSubscription(): SubscriptionMeta {
   const subscriptions = useRef<Subscriptions>({}).current;
   const counter = useRef<number>(0);
+
   const subscribe = useCallback<Subscribe>((callback) => {
     const id = randomId();
     subscriptions[id] = callback;

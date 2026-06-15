@@ -26,6 +26,7 @@ export function SocialLink({
       <Container className={useClasses("social-link")}>
         <Container className={useClasses("social-link-icon-container")}>
           <IconComponent className={useClasses("social-link-icon")} />
+
           {title && (
             <Text className={useClasses("social-link-title")}>
               {title}

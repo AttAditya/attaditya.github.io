@@ -1,5 +1,6 @@
 type Method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 const PROXY_URL = "https://proxy.attachment-aditya.workers.dev/";
+
 interface ApiCallerConfig {
   baseApiUrl: string;
   defaultHeaders?: { [key: string]: string };
@@ -20,6 +21,7 @@ export class ApiCaller {
   private proxied: boolean;
   private lsCacheTTL: number | null;
   private lsCached: boolean;
+
   constructor({
     baseApiUrl,
     defaultHeaders = {},
@@ -70,6 +72,7 @@ export class ApiCaller {
     }
 
     const finalUrl = this.baseApiUrl + endpoint;
+
     const finalHeaders = {
       method,
       body,
