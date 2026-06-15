@@ -7,6 +7,7 @@ import { Container } from "@components/ui/structure/container";
 import { Top } from "@components/ui/structure/top";
 import { HomeView } from "@components/view/home-view";
 import { ErrorView } from "@components/view/not-found-view";
+import { AboutPage } from "@routes/about";
 import { ProjectsPage } from "@routes/projects";
 import { useForwarded } from "@utils/path";
 import { type LayoutProps, useRouter } from "@utils/router";
@@ -44,6 +45,7 @@ function Layout({ forwarded, dynamic, children }: LayoutProps) {
 export function HomePage() {
   return useRouter(useForwarded(), Layout, {
     "projects": ProjectsPage,
+    "about": AboutPage,
   });
 }
 
