@@ -114,7 +114,7 @@ export function transformRepositoryList(raw: unknown): RepoData[] {
   const repoList = data.map(repo => ({
     name: repo.name,
     description: repo.description,
-    url: repo.html_url,
+    url: repo.homepage,
     lastUpdated: repo.updated_at,
     tags: repo.topics,
     author: repo.owner.login

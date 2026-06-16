@@ -56,9 +56,11 @@ export function ProjectCard({
             Check Repo
           </Button>
 
-          <Button onClick={() => openLink(projectData.url)}>
-            Try It Out
-          </Button>
+          {!!projectData.url && (
+            <Button onClick={() => openLink(projectData.url!)}>
+              Try It Out
+            </Button>
+          )}
         </Container>
       </Container>
     </Container>
