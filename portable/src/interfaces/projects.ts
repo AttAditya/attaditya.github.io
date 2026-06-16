@@ -3,6 +3,7 @@ export interface RepoData {
   description: string;
   url: string;
   tags: string[];
+  author: string;
   lastUpdated: string;
 }
 

@@ -1,4 +1,5 @@
 import { Linklet } from "@components/kit/linklet";
+import { ProjectCard } from "@components/kit/project-card";
 import { Button } from "@components/ui/interactive/button";
 import { Link } from "@components/ui/interactive/link";
 import { Container } from "@components/ui/structure/container";
@@ -20,14 +21,10 @@ export function ProjectList() {
       )}
 
       {ready && repoData.length > 0 && (repoData.map((repo) => (
-        <Link
-          key={repo.name}
-          url={repo.url}
-        >
-          <Button>
-            {repo.name}
-          </Button>
-        </Link>
+        <ProjectCard
+          key={repo.url}
+          projectData={repo}
+        />
       )))}
     </Container>
   );

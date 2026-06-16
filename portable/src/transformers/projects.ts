@@ -117,6 +117,7 @@ export function transformRepositoryList(raw: unknown): RepoData[] {
     url: repo.html_url,
     lastUpdated: repo.updated_at,
     tags: repo.topics,
+    author: repo.owner.login
   }));
 
   repoList.sort((a, b) => {
