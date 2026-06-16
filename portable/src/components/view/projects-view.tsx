@@ -3,6 +3,7 @@ import { Section } from "@components/kit/section";
 import { Input } from "@components/ui/interactive/input";
 import { Container } from "@components/ui/structure/container";
 import { Text } from "@components/ui/text/text";
+import { ProjectsProvider } from "@contexts/projects";
 import { useClasses } from "@styles";
 
 export function ProjectsView() {
@@ -16,10 +17,12 @@ export function ProjectsView() {
       </Container>
 
       <Container>
-        <Text>
-          This Project is under construction. Please check back later for
-          updates on my projects and work experience.
-        </Text>
+        <ProjectsProvider>
+          <Text>
+            This Project is under construction. Please check back later for
+            updates on my projects and work experience.
+          </Text>
+        </ProjectsProvider>
       </Container>
     </Section>
   );

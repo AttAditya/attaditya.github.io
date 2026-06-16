@@ -1,0 +1,23 @@
+import { githubCaller } from "@api/base/github";
+
+export async function getRepoList() {
+  const users = [
+    "attaditya",
+    "attachment-studios",
+  ];
+
+  const repoList: {
+    [key: string]: unknown;
+  }[] = [];
+
+  for (const user of users) {
+    const endpoint = `/users/${user}/repos?per_page=300`;
+    const repos = await githubCaller.callApi(endpoint);
+    repoList.push(...repos);
+  }
+
+  return {
+    data: repoList
+  };
+}
+
