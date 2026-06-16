@@ -1,4 +1,5 @@
 import { Search } from "@attaditya/iconoir-preact";
+import { ProjectList } from "@components/block/project-list";
 import { Section } from "@components/kit/section";
 import { Input } from "@components/ui/interactive/input";
 import { Container } from "@components/ui/structure/container";
@@ -18,10 +19,7 @@ export function ProjectsView() {
 
       <Container>
         <ProjectsProvider>
-          <Text>
-            This Project is under construction. Please check back later for
-            updates on my projects and work experience.
-          </Text>
+          <ProjectList />
         </ProjectsProvider>
       </Container>
     </Section>

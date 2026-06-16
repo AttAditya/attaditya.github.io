@@ -2,10 +2,12 @@ import { useCallback, useContext, useEffect, useState } from "preact/hooks";
 import { ComponentChildren, createContext } from "preact";
 
 import { getRepoList } from "@api/projects";
+import { RepoData } from "@interfaces/projects";
 import { transformRepositoryList } from "@transformers/projects";
 
 interface ProjectsMeta {
   ready: boolean;
+  repoData: RepoData[];
 }
 
 function createProjectsContext() {
@@ -13,7 +15,7 @@ function createProjectsContext() {
 
   function ProjectsProvider({ children }: { children: ComponentChildren }) {
     const [ready, setReady] = useState(false);
-    const [repoData, setRepoData] = useState<any>(null);
+    const [repoData, setRepoData] = useState<RepoData[]>([]);
 
     const loadRepositories = useCallback(async () => {
       const rawRepoList = await getRepoList();
@@ -28,6 +30,7 @@ function createProjectsContext() {
 
     const value = {
       ready,
+      repoData,
     };
 
     return <ProjectsContext.Provider value={value}>
