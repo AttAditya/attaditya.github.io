@@ -114,6 +114,7 @@ const classNames = {
   'project-card-repo-text': 'project-card-repo-text',
   'project-card-title': 'project-card-title',
   'project-list': 'project-list',
+  'projects-heading': 'projects-heading',
   'projects-search': 'projects-search',
   'projects-view': 'projects-view',
   'scrollpop': 'scrollpop',

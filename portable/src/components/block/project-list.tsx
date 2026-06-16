@@ -1,7 +1,4 @@
-import { Linklet } from "@components/kit/linklet";
 import { ProjectCard } from "@components/kit/project-card";
-import { Button } from "@components/ui/interactive/button";
-import { Link } from "@components/ui/interactive/link";
 import { Container } from "@components/ui/structure/container";
 import { Text } from "@components/ui/text/text";
 import { useProjects } from "@contexts/projects";

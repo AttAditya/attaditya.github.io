@@ -3,7 +3,7 @@ import { ProjectList } from "@components/block/project-list";
 import { Section } from "@components/kit/section";
 import { Input } from "@components/ui/interactive/input";
 import { Container } from "@components/ui/structure/container";
-import { Text } from "@components/ui/text/text";
+import { Heading } from "@components/ui/text/heading";
 import { ProjectsProvider } from "@contexts/projects";
 import { useClasses } from "@styles";
 
@@ -16,6 +16,13 @@ export function ProjectsView() {
           leftChildren={<Search />}
         />
       </Container>
+
+      <Heading
+        size="large"
+        className={useClasses("projects-heading")}
+      >
+        My Projects
+      </Heading>
 
       <Container>
         <ProjectsProvider>
