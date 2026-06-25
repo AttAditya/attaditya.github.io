@@ -101,6 +101,7 @@ const classNames = {
   'open-source-card-repo-text': 'open-source-card-repo-text',
   'open-source-card-title': 'open-source-card-title',
   'open-source-list': 'open-source-list',
+  'parallax': 'parallax',
   'project-card': 'project-card',
   'project-card-actions': 'project-card-actions',
   'project-card-content': 'project-card-content',

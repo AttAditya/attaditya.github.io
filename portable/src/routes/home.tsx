@@ -1,4 +1,5 @@
 import { Footer } from "@components/block/footer";
+import { Parallax } from "@components/block/parallax";
 import { Menu } from "@components/kit/menu";
 import { MenuBrand } from "@components/kit/menu-brand";
 import { ScrollTopButton } from "@components/kit/scroll-top-button";
@@ -16,6 +17,7 @@ function Layout({ forwarded, dynamic, children }: LayoutProps) {
   const path = `/${dynamic}/${forwarded?.join('/')}`;
 
   return <>
+    <Parallax />
     <Container>
       <Menu position="top-left">
         <MenuBrand />
