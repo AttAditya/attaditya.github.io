@@ -13,10 +13,10 @@
     to right,
     transparent 0%,
     color(
-      from var(--color-shine) xyz x y z / 0.75
+      from var(--color-shine) xyz x y z / 0.5
     ) 10%,
     color(
-      from var(--color-shine) xyz x y z / 0.75
+      from var(--color-shine) xyz x y z / 0.5
     ) 90%,
     transparent 100%
   );
