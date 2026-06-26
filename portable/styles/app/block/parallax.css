@@ -26,7 +26,6 @@
   height: 200vh;
   top: 0;
   left: 0;
-  z-index: -1;
   pointer-events: none;
   animation: parallax linear;
   animation-timeline: scroll();

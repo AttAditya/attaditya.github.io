@@ -64,6 +64,11 @@ body {
   max-width: 100%;
 }
 
+#main {
+  position: relative;
+  z-index: 1;
+}
+
 svg {
   stroke-linecap: round;
   shape-rendering: crispEdges;
