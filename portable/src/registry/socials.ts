@@ -10,7 +10,7 @@ export const SOCIALS: {
     },
     {
       icon: "GithubRegular",
-      url: "https://github.com/AttAditya",
+      url: "https://github.com/Its-AttAditya",
     },
     {
       icon: "LinkedinRegular",
@@ -25,7 +25,7 @@ export const SOCIALS: {
     {
       icon: "JournalRegular",
       title: "Resume",
-      url: "https://github.com/AttAditya/resume",
+      url: "https://github.com/Its-AttAditya/resume",
     }
   ]
 ];
