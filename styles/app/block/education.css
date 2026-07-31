@@ -1,0 +1,30 @@
+.education-history {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.education-history-title {
+  text-align: center;
+  padding: 0 8rem;
+}
+
+.education-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .education-history-title {
+    padding: 0 2rem;
+    text-align: center;
+  }
+}
+

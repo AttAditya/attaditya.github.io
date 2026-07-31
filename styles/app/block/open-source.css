@@ -1,0 +1,6 @@
+.open-source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+

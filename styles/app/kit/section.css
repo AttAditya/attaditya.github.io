@@ -1,0 +1,20 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 10rem;
+}
+
+.section-content {
+  padding: 0 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .section-content {
+    padding: 0 2rem;
+  }
+}
+
