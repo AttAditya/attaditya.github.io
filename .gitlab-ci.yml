@@ -1,0 +1,10 @@
+image: node:lts
+create-pages:
+  pages:
+    publish: dist
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  before_script:
+    - source dev.sh && dev setup
+  script:
+    - source dev.sh && dev build
