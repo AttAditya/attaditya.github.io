@@ -1,19 +1,10 @@
 <div align="center">
 
-![Pixel Aditya](https://github.com/AttAditya/attaditya.github.io/blob/main/portable/public/logo.png?raw=true)
+<img width="150px" alt="Delivr" src="./portable/public/logo.png">
 
-# AttAditya Portfolio
+# AttAditya
 
-Zero-Vibe Personal portfolio website showcasing projects, experience, and technical work across software development, systems, and experimental engineering.
+_Made with <3 by [AttAditya](https://attaditya.space/)_
 
-</div>
+<div align="center">
 
-## Tech Stack
-
-Custom Build Scripts with Preact and Typescript. Packaged with Iconoir Preact, handcrafted build with touch of passion.
-
----
-
-> _Made with <3 by [AttAditya](https://github.com/AttAditya)_
-
- 
