@@ -4,14 +4,6 @@ chmod +x $SCRIPTS_DIR/*.sh
 chmod +x $CWD/*.sh
 source $CWD/config.sh
 
-__start_env() {
-  :
-}
-
-__close_env() {
-  :
-}
-
 __guide() {
   $SCRIPTS_DIR/help.sh $SCRIPTS_DIR $@
 }
@@ -25,8 +17,6 @@ dev() {
   COMMAND=$1
   shift
 
-  trap __close_env EXIT
-
   if [ ! -f "$SCRIPTS_DIR/$COMMAND.sh" ]; then
     echo "Unknown command: $COMMAND\n"
     __guide $@
@@ -38,8 +28,6 @@ dev() {
     __guide $@
     return $?
   fi
-
-  __start_env
 
   "$SCRIPTS_DIR/$COMMAND.sh" "$@"
   return $?
