@@ -5,6 +5,6 @@ create-pages:
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   before_script:
-    - . ./dev.sh && dev setup
+    - bash -c 'source ./dev.sh && dev setup'
   script:
-    - . ./dev.sh && dev build
+    - bash -c 'source ./dev.sh && dev build'
