@@ -16,15 +16,15 @@ export function Latest() {
 
       <Container className={useClasses("latest-linklets")}>
         <Linklet
-          icon="LaptopDevModeRegular"
-          url="https://pypi.org/project/gsam"
-          title="GSAM"
+          icon="SparksRegular"
+          url="https://cutycode.attaditya.space/"
+          title="CutyCode"
         />
 
         <Linklet
-          icon="SparksRegular"
-          url="https://pypi.org/project/cutypy"
-          title="CutyPy"
+          icon="LaptopDevModeRegular"
+          url="https://pypi.org/project/gsam"
+          title="GSAM"
         />
 
         <Linklet
