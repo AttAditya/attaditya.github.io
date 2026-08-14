@@ -12,6 +12,10 @@ export const SOCIALS: {
     },
     {
       icon: "GithubRegular",
+      url: "https://github.com/AttAditya",
+    },
+    {
+      icon: "GitlabFullRegular",
       url: "https://gitlab.com/AttAditya",
     },
     {
