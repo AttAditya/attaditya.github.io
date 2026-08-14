@@ -20,6 +20,7 @@
     ) 90%,
     transparent 100%
   );
+
   position: fixed !important;
   display: block;
   width: 100%;

@@ -8,6 +8,7 @@
   position: relative;
   cursor: pointer;
   overflow: hidden;
+
   background-color: color(
     from var(--color-focus) xyz x y z / 0.1
   );

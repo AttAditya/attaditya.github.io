@@ -51,6 +51,7 @@
 
 .hero-subtitle {
   text-align: center;
+
   color: color(
     from var(--color-shade) xyz x y z / 0.5
   );

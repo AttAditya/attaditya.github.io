@@ -4,11 +4,13 @@
     height: 0vmax;
     opacity: 1;
   }
+
   80%{
     width: 300vmax;
     height: 300vmax;
     opacity: 1;
   }
+
   100% {
     width: 300vmax;
     height: 300vmax;

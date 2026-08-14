@@ -2,6 +2,7 @@
   from {
     --anim-degree: 0deg;
   }
+
   to {
     --anim-degree: 360deg;
   }
@@ -44,12 +45,15 @@
   text-align: center;
   position: absolute;
   transition: none;
+
   transform: translate(-50%, -50%) rotate(
     calc(var(--angle) * 1deg + var(--anim-degree) + 180deg)
   );
+
   top: calc(50% + (
     cos((var(--angle) * 1deg) + var(--anim-degree)) * var(--radius)
   ));
+
   left: calc(50% + (
     sin((var(--angle) * 1deg) + var(--anim-degree)) * var(--radius)
   ));
