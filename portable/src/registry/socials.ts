@@ -8,7 +8,7 @@ export const SOCIALS: {
   [
     {
       icon: "MailRegular",
-      url: "mailto:adityaprasaddash.official@gmail.com",
+      url: "mailto:hello@attaditya.space",
     },
     {
       icon: "GithubRegular",
@@ -31,7 +31,7 @@ export const SOCIALS: {
     {
       icon: "JournalRegular",
       title: "Resume",
-      url: "https://gitlab.com/AttAditya/resume",
+      url: "https://resume.attaditya.space",
     }
   ]
 ];

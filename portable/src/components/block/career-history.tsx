@@ -20,9 +20,7 @@ export function CareerHistory() {
         {experiences.map(experience => (
           <Experience
             key={experience.company}
-            company={experience.company}
-            role={experience.role}
-            contributions={experience.contributions}
+            {...experience}
           />
         ))}
       </Container>

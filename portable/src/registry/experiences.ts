@@ -1,10 +1,25 @@
-export const EXPERIENCES = [
+import * as iconoir from "@attaditya/iconoir-preact/regular";
+
+export const EXPERIENCES: {
+  icon?: keyof typeof iconoir;
+  company: string;
+  startDate: Date;
+  endDate: Date;
+
+  role: {
+    name: string;
+    type: string;
+  };
+
+  contributions: string[];
+}[] = [
   {
-    company: "Scaler Academy",
+    icon: "LaptopDevModeRegular",
+    company: "InterviewBit",
     startDate: new Date("2024-11-18"),
     endDate: new Date("2025-04-16"),
     role: {
-      name: "Software Engineer",
+      name: "SDE Intern",
       type: "Internship",
     },
     contributions: [
@@ -27,11 +42,12 @@ export const EXPERIENCES = [
     ]
   },
   {
-    company: "SingOneSong, Inc",
+    icon: "LaptopDevModeRegular",
+    company: "SingOneSong",
     startDate: new Date("2025-08-29"),
     endDate: new Date("2026-01-09"),
     role: {
-      name: "Software Engineer",
+      name: "SDE Intern",
       type: "Internship",
     },
     contributions: [
@@ -54,11 +70,12 @@ export const EXPERIENCES = [
     ]
   },
   {
+    icon: "LaptopDevModeRegular",
     company: "Wabby AI",
     startDate: new Date("2026-01-12"),
     endDate: new Date("2026-04-12"),
     role: {
-      name: "Software Engineer",
+      name: "SDE Intern",
       type: "Internship",
     },
     contributions: [
