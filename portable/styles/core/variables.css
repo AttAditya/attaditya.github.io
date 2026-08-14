@@ -10,6 +10,7 @@
   --color-shine: oklch(100.000% 0.0250 42.000);
   --color-shade: oklch(10.0000% 0.1000 42.000);
   --color-focus: oklch(74.612% 0.15576 233.807);
+  --dark: 0;
 }
 
 :root.dark {
@@ -17,5 +18,6 @@
   --color-shine: oklch(13.48% 0.0085 211.8);
   --color-focus: oklch(87.916% 0.21339 155.977);
   --color-white: oklch(20.91% 0.21339 155.977);
+  --dark: 1;
 }
 

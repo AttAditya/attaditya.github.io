@@ -1,3 +1,4 @@
+import { About } from "@components/block/about";
 import { CareerHistory } from "@components/block/career-history";
 import { CpStats } from "@components/block/cp-stats";
 import { Domains } from "@components/block/domains";
@@ -12,6 +13,7 @@ export function HomeView() {
   return (
     <ScrollPop>
       <Hero />
+      <About />
       <Latest />
       <Domains />
       <OpenSource />

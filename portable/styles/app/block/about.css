@@ -1,2 +1,13 @@
+.about-text {
+  border-radius: 1rem;
+  padding: 2rem;
+  background: hsl(
+    from var(--color-focus) h calc(s) calc(
+      l - (l * 0.7 * var(--dark)) + (l * 0.7 * (1 - var(--dark)))
+    ) / 1
+  );
 
+  font-size: 1.25rem;
+  font-weight: 100;
+}
 
