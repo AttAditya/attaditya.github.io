@@ -1,5 +1,4 @@
 import { SocialLink } from "@components/kit/social-link";
-import { Button } from "@components/ui/interactive/button";
 import { Container } from "@components/ui/structure/container";
 import { SOCIALS } from "@registry/socials";
 import { useClasses } from "@styles";
@@ -10,7 +9,7 @@ function SocialsRow({ row }: { row: typeof SOCIALS[number] }) {
       {row.map((social, index) => (
         <SocialLink
           key={index}
-          icon={social.icon as any}
+          icon={social.icon}
           title={social.title}
           url={social.url}
         />

@@ -2,6 +2,7 @@ import { Linklet } from "@components/kit/linklet";
 import { Section } from "@components/kit/section";
 import { Container } from "@components/ui/structure/container";
 import { Heading } from "@components/ui/text/heading";
+import { LATEST } from "@registry/latest";
 import { useClasses } from "@styles";
 
 export function Latest() {
@@ -12,23 +13,14 @@ export function Latest() {
       </Heading>
 
       <Container className={useClasses("latest-linklets")}>
-        <Linklet
-          icon="SparksRegular"
-          url="https://cutycode.attaditya.space/"
-          title="CutyCode"
-        />
-
-        <Linklet
-          icon="LaptopDevModeRegular"
-          url="https://pypi.org/project/gsam"
-          title="GSAM"
-        />
-
-        <Linklet
-          icon="PuzzleRegular"
-          url="https://pypi.org/project/langex"
-          title="LangEx"
-        />
+        {LATEST.map((project, index) => (
+          <Linklet
+            key={index}
+            icon={project.icon}
+            url={project.url}
+            title={project.title}
+          />
+        ))}
       </Container>
 
       <Linklet

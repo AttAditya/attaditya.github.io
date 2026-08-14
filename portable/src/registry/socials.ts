@@ -1,5 +1,7 @@
+import * as iconoir from "@attaditya/iconoir-preact/regular";
+
 export const SOCIALS: {
-  icon: string;
+  icon: keyof typeof iconoir;
   title?: string;
   url: string;
 }[][] = [
