@@ -1,0 +1,142 @@
+@keyframes ping {
+  0%, 20%, 100% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.05);
+  }
+}
+
+.experience {
+  display: flex;
+  gap: 3rem;
+  border-radius: 2rem;
+  align-items: center;
+  padding: 2rem;
+
+  background-color: hsl(
+    from var(--color-focus) h calc(s) calc(
+      l - (l * 0.7 * var(--dark)) + (l * 0.7 * (1 - var(--dark)))
+    ) / 1
+  );
+}
+
+.experience-separator {
+  text-align: center;
+  width: 100%;
+  text-wrap: nowrap;
+  overflow: hidden;
+  color: transparent;
+  text-decoration: line-through wavy var(--color-focus);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.experience:last-child .experience-separator {
+  display: none;
+}
+
+.experience-separator-icon {
+  color: var(--color-focus);
+  min-width: 3rem;
+  text-decoration: none !important;
+  min-height: 3rem;
+  padding: 0.5rem;
+  stroke-width: 1.5;
+  border: 0.125rem solid var(--color-focus);
+  border-radius: 0.5rem;
+}
+
+.experience-icon {
+  min-width: 6rem;
+  min-height: 6rem;
+  aspect-ratio: 1 / 1;
+  text-decoration: none !important;
+  stroke-width: 1.5;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.experience-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.experience-company {
+  border-radius: 1rem;
+  flex: 1;
+}
+
+.experience-company > * {
+  font-size: 3rem !important;
+}
+
+.experience-role {
+  color: var(--color-focus);
+  border-radius: 1rem;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-contributions {
+  background-color: var(--color-focus);
+  color: var(--color-white);
+  grid-area: contributions;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  counter-reset: contribution;
+}
+
+.experience-contribution {
+  background-color: var(--color-white);
+  color: var(--color-shade);
+  padding: 1rem;
+  border-radius: 1rem;
+  animation: ping 6s ease-in-out infinite !important;
+  animation-delay: calc(sibling-index() * 0.5s) !important;
+  counter-increment: contribution;
+  transition: none;
+}
+
+@media (max-width: 700px) {
+  .experience-grid {
+    flex-direction: column !important;
+  }
+
+  .experience {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+
+  .experience-company > * {
+    font-size: 2rem !important;
+  }
+
+  .experience-role > h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .experience-role > h4 {
+    font-size: 1rem !important;
+  }
+
+  .experience-icon {
+    min-width: 4rem !important;
+    min-height: 4rem !important;
+  }
+}
+
