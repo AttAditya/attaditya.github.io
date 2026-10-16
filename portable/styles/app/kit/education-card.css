@@ -1,3 +1,15 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .education-card {
   display: flex;
   flex-direction: column;
@@ -24,6 +36,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 0.75rem;
+  animation: pulse 2s infinite;
 }
 
 .education-card-icon {

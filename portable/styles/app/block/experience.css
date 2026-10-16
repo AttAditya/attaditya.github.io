@@ -10,10 +10,10 @@
 
 @keyframes shine-animation {
   0% {
-    transform: translateX(-100%);
+    left: -100%;
   }
   100% {
-    transform: translateX(100%);
+    left: 100%;
   }
 }
 
@@ -131,18 +131,16 @@
   position: absolute;
   inset: 0;
   transform: translateX(calc(100px * var(--index))) skewX(-20deg);
-  animation: shine-animation 2s linear infinite;
+  animation: shine-animation 3s ease-in infinite;
   --content: counter(contribution);
-  opacity: 0.5;
+  opacity: 0.25;
   pointer-events: none;
+  width: 50%;
   background: linear-gradient(
-    315deg,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0)
+    90deg,
+    transparent 25%,
+    white 50%,
+    transparent 75%
   );
 }
 

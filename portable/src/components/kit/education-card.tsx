@@ -21,7 +21,10 @@ export function EducationCard({
 
   return (
     <Container className={useClasses("education-card")}>
-      <Container className={useClasses("education-card-icon-container")}>
+      <Container className={useClasses(
+        "education-card-icon-container",
+        "no-scrollpop",
+      )}>
         <IconComponent className={useClasses("education-card-icon")} />
       </Container>
 
