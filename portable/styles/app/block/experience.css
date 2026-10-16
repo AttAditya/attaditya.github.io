@@ -12,6 +12,7 @@
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -136,6 +137,7 @@
   opacity: 0.25;
   pointer-events: none;
   width: 50%;
+
   background: linear-gradient(
     90deg,
     transparent 25%,

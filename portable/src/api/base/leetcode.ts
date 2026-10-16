@@ -29,6 +29,7 @@ export const leetcodeCaller = new ApiCaller({
     ].join(", "),
     "sec-ch-ua-arch": "\"arm\"",
     "sec-ch-ua-bitness": "\"64\"",
+
     "sec-ch-ua-full-version": "\"148.0.7778.179\"",
     "sec-ch-ua-full-version-list": [
       "\"Chromium\";v=\"148.0.7778.179\"",
@@ -38,6 +39,7 @@ export const leetcodeCaller = new ApiCaller({
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-model": "\"\"",
     "sec-ch-ua-platform": "\"macOS\"",
+
     "sec-ch-ua-platform-version": "\"26.5.0\"",
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
