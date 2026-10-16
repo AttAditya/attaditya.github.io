@@ -11,15 +11,15 @@ export const OPEN_SOURCES = [
     ].join(" "),
     dist:{
       main: "https://www.glowstick.me/tlpp",
-      fork: "https://attaditya.space/Little-Plane-Project/",
+      fork: "https://little-flight.attaditya.space",
     },
     repo:{
       author: "Glowstick0017",
       name: "Little-Plane-Project",
     },
     fork:{
-      author: "AttAditya",
-      name: "Little-Plane-Project"
+      author: "Little-Flight",
+      name: "little-flight"
     },
     animation: "fly-pulse"
   },
@@ -28,8 +28,9 @@ export const OPEN_SOURCES = [
     title: "Iconoir Icon Library",
     info: "A large collection of free to use icons",
     mine: [
-      "Although not merged yet, I created a PR and fork for the",
-      "Preact version of the library, which is available on my GitHub.",
+      "Contributing for Iconoir - Contribution Guidelines, Landing Pages, ",
+      "and Iconoir Preact - which is currently available as ",
+      "@attaditya/iconoir-preact on npm.",
     ].join(" "),
     dist: {
       main: "https://www.npmjs.com/package/iconoir",

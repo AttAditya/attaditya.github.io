@@ -40,6 +40,7 @@ const classNames = {
   'experience-role': 'experience-role',
   'experience-separator': 'experience-separator',
   'experience-separator-icon': 'experience-separator-icon',
+  'experience-shine': 'experience-shine',
   'fly-pulse': 'fly-pulse',
   'footer': 'footer',
   'footer-content': 'footer-content',

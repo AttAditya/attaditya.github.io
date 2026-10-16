@@ -8,12 +8,29 @@
   }
 }
 
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+*:has(> .experience) {
+  counter-reset: contribution;
+}
+
 .experience {
+  counter-increment: contribution;
+  position: relative;
   display: flex;
   gap: 3rem;
   border-radius: 2rem;
   align-items: center;
   padding: 2rem;
+  overflow: hidden;
+  --index: sibling-index();
 
   background-color: hsl(
     from var(--color-focus) h calc(s) calc(
@@ -106,9 +123,27 @@
   padding: 1rem;
   border-radius: 1rem;
   animation: ping 6s ease-in-out infinite !important;
-  animation-delay: calc(sibling-index() * 0.5s) !important;
   counter-increment: contribution;
   transition: none;
+}
+
+.experience-shine {
+  position: absolute;
+  inset: 0;
+  transform: translateX(calc(100px * var(--index))) skewX(-20deg);
+  animation: shine-animation 2s linear infinite;
+  --content: counter(contribution);
+  opacity: 0.5;
+  pointer-events: none;
+  background: linear-gradient(
+    315deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 @media (max-width: 700px) {

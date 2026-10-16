@@ -7,7 +7,7 @@ interface ExperienceProps {
   icon?: keyof typeof iconoir;
   company: string;
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
 
   role: {
     name: string;
@@ -28,6 +28,11 @@ export function Experience({
 
   return (
     <Container className={useClasses("experience")}>
+      <Container
+        className={useClasses("experience-shine", "no-scrollpop")}
+        children={null}
+      />
+
       <Icon className={useClasses("experience-icon")} />
       <Container className={useClasses("experience-grid")}>
         <Container className={useClasses("experience-column")}>
@@ -47,8 +52,10 @@ export function Experience({
             <Heading size="small">
               {startDate.toLocaleString("default", { month: "short" })}{" "}
               {startDate.getFullYear()} -{" "}
-              {endDate.toLocaleString("default", { month: "short" })}{" "}
-              {endDate.getFullYear()}
+              {!endDate ? "Present" : (<>
+                {endDate.toLocaleString("default", { month: "short" })}{" "}
+                {endDate.getFullYear()}
+              </>)}
             </Heading>
           </Container>
         </Container>

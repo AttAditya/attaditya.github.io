@@ -4,7 +4,7 @@ export const EXPERIENCES: {
   icon?: keyof typeof iconoir;
   company: string;
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
 
   role: {
     name: string;
@@ -14,7 +14,7 @@ export const EXPERIENCES: {
   contributions: string[];
 }[] = [
   {
-    icon: "LaptopDevModeRegular",
+    icon: "MobileDevModeRegular",
     company: "InterviewBit",
     startDate: new Date("2024-11-18"),
     endDate: new Date("2025-04-16"),
@@ -42,7 +42,7 @@ export const EXPERIENCES: {
     ]
   },
   {
-    icon: "LaptopDevModeRegular",
+    icon: "PuzzleRegular",
     company: "SingOneSong",
     startDate: new Date("2025-08-29"),
     endDate: new Date("2026-01-09"),
@@ -74,6 +74,32 @@ export const EXPERIENCES: {
     company: "Wabby AI",
     startDate: new Date("2026-01-12"),
     endDate: new Date("2026-04-12"),
+    role: {
+      name: "SDE Intern",
+      type: "Internship",
+    },
+    contributions: [
+      [
+        "Owned development of the core real-time chat",
+        "experience using GraphQL subscriptions.",
+      ].join(" "),
+      [
+        "Built modular frontend architecture handling caching,",
+        "pagination, and re-render control."
+      ].join(" "),
+      [
+        "Integrated authentication and embedded sign-up flows.",
+      ].join(" "),
+      [
+        "Developed foundational systems for an early-stage",
+        "platform prior to public release."
+      ].join(" "),
+    ]
+  },
+  {
+    icon: "DeveloperRegular",
+    company: "Unbound AI",
+    startDate: new Date("2026-10-19"),
     role: {
       name: "SDE Intern",
       type: "Internship",
