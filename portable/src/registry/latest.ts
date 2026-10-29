@@ -6,19 +6,19 @@ export const LATEST: {
   url: string;
 }[] = [
   {
+    icon: "LaptopDevModeRegular",
+    url: "https://bashbrunch.attaditya.space/",
+    title: "BashBrunch",
+  },
+  {
     icon: "SparksRegular",
     url: "https://cutycode.attaditya.space/",
     title: "CutyCode",
   },
   {
-    icon: "LaptopDevModeRegular",
+    icon: "PuzzleRegular",
     url: "https://pypi.org/project/gsam",
     title: "GSAM",
-  },
-  {
-    icon: "PuzzleRegular",
-    url: "https://pypi.org/project/langex",
-    title: "LangEx",
   },
 ];
 

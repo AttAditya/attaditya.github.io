@@ -99,7 +99,7 @@ export const EXPERIENCES: {
   {
     icon: "DeveloperRegular",
     company: "Unbound AI",
-    startDate: new Date("2026-10-19"),
+    startDate: new Date("2026-11-02"),
     role: {
       name: "SDE Intern",
       type: "Internship",
