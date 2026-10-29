@@ -1,0 +1,6 @@
+.careers-list {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+}
+

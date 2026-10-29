@@ -1,0 +1,16 @@
+.socials-rows {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.socials-linklets {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+}
+
